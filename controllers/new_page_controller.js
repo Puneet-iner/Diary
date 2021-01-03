@@ -22,6 +22,7 @@ module.exports.save = function(req, res){
                 }
                 else{
                     console.log('created');
+                    return res.redirect('/')
                 }
             })
         }else{
