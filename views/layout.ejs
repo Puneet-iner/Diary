@@ -233,7 +233,7 @@
 </head>
 <body>
     <main id="layout-main">
-        <% if(locals.user._id) { %>
+        <% if(locals.user && locals.user._id){ %>
         <sec id="logout"><a href="/users/logout">Logout</a></sec>
         <% } %>
         <%- body %>
