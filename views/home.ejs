@@ -1,0 +1,19 @@
+<div id="do">
+    <sec id="create"><a href="/life/create">Create</a></sec>
+    <% if(index > 0 ) { %>
+    <sec id="prev"><a href="/life/prev/<%= index %>">Prev</a></sec>
+    <% }%>
+    <% if(index < length - 1) { %>
+    <sec id="next"><a href="/life/next/<%= index %>">Next</a></sec>
+    <% } %>
+</div>
+<div id="pages">
+    <section id="left-portion">
+        <% for(let i = 0; i < 14; i++) { %>
+            <div id="circle-dot"></div>
+        <% } %>
+    </section>
+    <section id="right-portion">
+        <p id="text"><u><i style="color: brown"><%= values.createdAt %></i></u><br><%= values.text %></p>
+    </section>
+</div>

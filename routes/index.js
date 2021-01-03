@@ -1,0 +1,11 @@
+const express = require('express');
+const app = express();
+const router = express.Router();
+console.log("Router loded");
+const passport = require('passport');
+const homeController = require('../controllers/home_controller');
+router.get('/', passport.checkAuthentication, homeController.home);
+router.use('/users', require('./users'));
+router.use('/life', require('./life'));
+router.use('/new-page', require('./new-page'));
+module.exports = router;

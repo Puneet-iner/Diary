@@ -1,0 +1,27 @@
+
+    <section id="manual-identify">
+        <form method="POST" action="/users/create">
+            <div>
+                <label id="name" for="name">Name</label>
+                <br>
+                <input autocomplete="off" id="name" name="name" type="text" placeholder="Name">
+            </div>
+            <div>
+                <label id="lemail" for="email">Email</label>
+                <br>
+                <input autocomplete="off" id="email" name="email" type="email" placeholder="Email">
+            </div>
+            <div>
+                <label id="lpassword" for="password">Password</label><br>
+                <input autocomplete="off"  id="password" name="password" type="password" placeholder="password">
+            </div>
+            <div>
+                <label id="cpassword" for="confirm_password"">ReEnter-Password</label><br>
+                <input autocomplete="off"  id="confirm_password" name="confirm_password" type="password" placeholder="Re-Enter Password..."">
+            </div>
+            <sec>
+                <button type="submit" style="height: 100%; width: 75px; font-family: Georgia, 'Times New Roman', Times, serif; font-size: 18px; font-weight: bold;">SignUp</button>
+                <a href="/users/sign-in">SignIn?</a>
+            </sec>
+        </form>
+    </section>

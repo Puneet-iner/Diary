@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' 
+     content='width=device-width, initial-scale=1.0, maximum-scale=0.85, 
+     user-scalable=0' >
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100&family=Yellowtail&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Redressed&display=swap" rel="stylesheet">
+    <title>Verify</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            position: relative;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+            cursor: pointer;
+        }
+        button{
+            outline: none;
+            border: none;
+            cursor: pointer;
+            background-color: antiquewhite;
+        }
+        body{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('https://images.unsplash.com/photo-1520758594221-872948699332?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YnJpY2slMjB3YWxsfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60');
+            background-size: cover;
+        }
+
+        #manual-identify{
+            /* background-image: url('https://www.microsoft.com/en-us/research/uploads/prod/2019/11/Area_IconHeader_Intell_HCI_11_2019_1920x720.png'); */
+            height:450px;
+            width: 400px;
+            box-sizing: border-box;
+            border-radius: 15px !important; 
+            max-width: 100vw;;
+        }
+        #manual-identify form{
+            height: 100%;
+            width: 100%;
+            display: grid;
+            grid-template-rows: 50px 50px 50px 50px 30px;
+            margin: auto;
+            grid-template-columns: 93%;
+            grid-gap:18px;
+            justify-content: center;
+            align-content: center;
+        }
+        label{
+            color: white;
+            font-size: 20px;
+        }
+        input:focus::placeholder {
+            color: transparent;
+        }
+        #manual-identify form input{
+            outline: none;
+            border: none;
+            width: 95%;
+            height: 32px;
+            font-size: 20px;
+            padding: 3px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        #manual-identify form input:focus{
+            color: rgb(11, 11, 64);
+            font-weight: bold;
+        }
+        #do, #do-create{
+            position: relative;
+            width: 100vw;
+            bottom: 10px;
+            display: grid;
+            justify-content: center;
+            grid-gap: 5px;
+            width: auto;
+            height: auto;
+        }
+        #do{
+            grid-template-columns: 70px 70px 70px;
+        }
+        #do-create{
+            grid-template-columns: 70px;
+        }
+        #create, #prev, #next, #save{
+            cursor: pointer;
+            font-family: 'Redressed', cursive;
+            color: white;
+            width: 70px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            background-image: url('https://i.pinimg.com/originals/d0/83/1d/d0831d1fdc4089ecdbfdd4b4c1106b2b.png');
+    
+        }
+        #new-page::placeholder{
+            color: black;
+        }
+        #create:hover, #prev:hover, #next:hover, #save:hover{
+            background-image: url('https://images.unsplash.com/photo-1520758594221-872948699332?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YnJpY2slMjB3YWxsfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60');
+            background-size: cover;
+        }
+        
+        #pages{
+            height: 85vh;
+            width: 90vw;
+            max-width: 800px;
+            border-radius: 0px 20px 20px 0px;
+            box-shadow: 1px 0px white;
+            display: grid;
+            grid-template-columns: 12% 88%;
+            grid-template-rows: 100%;
+            justify-content: center;
+            align-content: center;
+            border-left: 1.5px solid black;
+            border-right: 2px solid #807368;
+            background-image: url('https://i.pinimg.com/originals/d0/83/1d/d0831d1fdc4089ecdbfdd4b4c1106b2b.png');
+        }
+        #left-portion{
+            display: grid;
+            justify-content: center;
+            align-content: center;
+            grid-template-rows: repeat(14, 50px);
+            grid-template-columns: 100%;
+        }
+        #right-portion{
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Redressed', cursive;
+            display: grid;
+            grid-template-columns: 93%;
+            grid-template-rows: 85%;
+            align-content: center;
+            justify-content: center;
+        }
+        #right-portion > p{
+            overflow-y: scroll;
+            overflow-x: hidden;
+            padding: 5px;
+            font-size: 25px;
+            font-weight: bold;
+            height: 95%;
+            width: 100%;
+            line-height: 1.2;
+            text-align: justify;
+            text-transform: capitalize;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+            border-radius: 0px 20px 20px 0px;
+            background-image: url('https://i.pinimg.com/originals/d0/83/1d/d0831d1fdc4089ecdbfdd4b4c1106b2b.png');
+        }
+        #circle-dot{
+            height: 25px;
+            width: 25px;
+            margin: auto;
+            border-radius: 50%;
+            border: 1px solid white;
+            background-image: url('https://images.unsplash.com/photo-1520758594221-872948699332?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YnJpY2slMjB3YWxsfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60');
+            background-size: cover;
+        }
+        #right-portion > p::-webkit-scrollbar, #new-page::-webkit-scrollbar {
+            display: none;
+        }
+        #new-page{
+            padding: 5px;
+            height: 85vh;
+            box-sizing: border-box;
+            width: 90vw;
+            font-size: 30px;
+            font-family: 'Redressed', cursive;
+            color: black;
+            max-width: 800px;
+            border-radius: 0px 20px 20px 0px;
+            box-shadow: 1px 0px white;
+            display: grid;
+            grid-template-columns: 12% 88%;
+            grid-template-rows: 100%;
+            justify-content: center;
+            align-content: center;
+            border-left: 1.5px solid black;
+            border-right: 2px solid #807368;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+            background-image: url('https://i.pinimg.com/originals/d0/83/1d/d0831d1fdc4089ecdbfdd4b4c1106b2b.png');   
+        }
+        #new-page:focus{
+            outline: none;
+        }
+        a{
+            font-family: 'Redressed', cursive;
+        }
+        #logout{
+            position: fixed;
+            height: 40px;
+            width: 70px;
+            border-radius: 15px;
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            top: 5px;
+            right: 5px;
+            background-image: url('https://i.pinimg.com/originals/d0/83/1d/d0831d1fdc4089ecdbfdd4b4c1106b2b.png');   
+        }
+        @media only screen and (max-width: 800px) {
+            #pages{
+                grid-template-columns: 10% 90%;
+            }
+            #left-portion{
+                grid-template-rows: repeat(14, 40px);
+            }
+            #circle-dot{
+                height: 20px;
+                width: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main id="layout-main">
+        <% if(locals.user._id) { %>
+        <sec id="logout"><a href="/users/logout">Logout</a></sec>
+        <% } %>
+        <%- body %>
+    </main>
+</body>
+</html>
